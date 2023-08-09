@@ -66,7 +66,9 @@ async def on_message(message):
             await message.channel.send('You are right!')
         else:
             await message.channel.send(f'Oops. It is actually {answer}.')
-
+    elif message.content.startswith('!deleteme'):
+            msg = await message.channel.send('Goodbye in 3 seconds...', delete_after=3.0)
+            await msg.delete()
 
 
 client.run("")
